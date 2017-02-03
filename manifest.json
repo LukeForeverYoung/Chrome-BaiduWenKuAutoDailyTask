@@ -1,0 +1,32 @@
+{
+    "manifest_version":2,
+    "name":"Share",
+    "description": "null",
+    "version": "2.0",
+    "permissions":
+    [
+        "storage",
+        "tabs"
+    ],
+    "browser_action":
+    {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "background":
+    {
+        "page":"background.html"
+    },
+    "content_scripts": 
+    [
+        {
+            "matches":["*://wenku.baidu.com/task/browse/daily"],
+            "js": ["func1.js"]
+        },
+        {
+            "matches":["*://*/*"],
+            "exclude_globs":["*://wenku.baidu.com/task/browse/daily"],
+            "js": ["test.js"]
+        }
+    ]
+}
