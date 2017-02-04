@@ -15,9 +15,11 @@ onload=function()
             flag=true;
         }
     }
+    var signBtn=document.getElementsByClassName("g-btn g-btn-pass js-signin-btn g-btn-no");
+    signBtn[0].click();
     if(flag)
     {
-        alert("需要自行点击领取奖励和签到");
+        alert("需要自行点击领取奖励");
     }
         
     /*
