@@ -1,4 +1,5 @@
 chrome.runtime.onMessage.addListener(callback);
+<<<<<<< HEAD
 function callback(request, sender, sendRsponse) {
     console.log("onMessage");
     var cmd = request.cmd;
@@ -27,4 +28,25 @@ function callback(request, sender, sendRsponse) {
         chrome.tabs.remove(sender.id,sendRsponse);
     }
 
+=======
+function callback(request,sender,sendRsponse)
+{
+    var day=request.day;
+    var preday=localStorage["day"];
+    newTabObj=
+    {
+        "url":"http://wenku.baidu.com/task/browse/daily"
+    }
+    if(preday==day)
+    {
+        //alert("yes");
+    }
+    else
+    {
+        //alert("no");
+        chrome.tabs.create(newTabObj);
+        localStorage["day"]=day;
+    }
+    
+>>>>>>> 2a127457b73166f9f9c846c51888fe7010296580
 }
