@@ -6,12 +6,8 @@
     "permissions":
     [
         "storage",
-<<<<<<< HEAD
-        "tabs",
-        "*://service.weibo.com/*"
-=======
+        "*://service.weibo.com/*",
         "tabs"
->>>>>>> 2a127457b73166f9f9c846c51888fe7010296580
     ],
     "browser_action":
     {
@@ -26,7 +22,6 @@
     [
         {
             "matches":["*://wenku.baidu.com/task/browse/daily"],
-<<<<<<< HEAD
             "run_at":"document_end",
             "js": ["clickShareBtn.js"]
         },
@@ -35,36 +30,14 @@
             "exclude_globs":[
                 "*://wenku.baidu.com/task/browse/daily",
                 "*://service.weibo.com/*"],
-            "js": ["sendDate.js"]
-=======
-<<<<<<< HEAD
-            "run_at":"document_end",
-=======
->>>>>>> 2a127457b73166f9f9c846c51888fe7010296580
-            "js": ["func1.js"]
-        },
-        {
-            "matches":["*://*/*"],
-<<<<<<< HEAD
-            "exclude_globs":[
-                "*://wenku.baidu.com/task/browse/daily",
-                "*://service.weibo.com/*"],
-            "js": ["test.js"]
->>>>>>> f3e2080e636742c5a039b38bc864f21b10f95f1c
+            "js": ["sendDate.js"],
+            "run_at":"document_end"
         },
         {
             "matches":["*://service.weibo.com/*"],
             "js":["close.js"],
-<<<<<<< HEAD
             "run_at":"document_end",
             "exclude_globs":["*://wenku.baidu.com/task/browse/daily"]
-=======
-            "run_at":"document_end"
-=======
-            "exclude_globs":["*://wenku.baidu.com/task/browse/daily"],
-            "js": ["test.js"]
->>>>>>> 2a127457b73166f9f9c846c51888fe7010296580
->>>>>>> f3e2080e636742c5a039b38bc864f21b10f95f1c
         }
     ]
 }
