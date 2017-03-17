@@ -1,6 +1,5 @@
 onload=function()
-{
-   
+{  
     var shareList=document.getElementsByClassName("weibo");
     var cnt=1;
     var i
@@ -21,10 +20,4 @@ onload=function()
     {
         alert("需要自行点击领取奖励");
     }
-        
-    /*
-        TODO
-        自动点击签到
-        每日自动启动
-    */
 }

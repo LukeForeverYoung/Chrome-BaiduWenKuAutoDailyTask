@@ -21,12 +21,21 @@
     [
         {
             "matches":["*://wenku.baidu.com/task/browse/daily"],
-            "js": ["func1.js"]
+            "run_at":"document_end",
+            "js": ["clickShareBtn.js"]
         },
         {
             "matches":["*://*/*"],
-            "exclude_globs":["*://wenku.baidu.com/task/browse/daily"],
-            "js": ["test.js"]
+            "exclude_globs":[
+                "*://wenku.baidu.com/task/browse/daily",
+                "*://service.weibo.com/*"],
+            "js": ["sendDate.js"]
+        },
+        {
+            "matches":["*://service.weibo.com/*"],
+            "js":["close.js"],
+            "run_at":"document_end",
+            "exclude_globs":["*://wenku.baidu.com/task/browse/daily"]
         }
     ]
 }

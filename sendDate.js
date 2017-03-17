@@ -4,8 +4,8 @@ onload=function()
     var day=mdate.getDay();
     var sendObj=
     {
+        "cmd":"new page",
         "day":day
     }
-    var toID="gmibgeigikibbbdbbaieddafdlglaoac";
-    chrome.runtime.sendMessage(toID,sendObj);
+    chrome.runtime.sendMessage(sendObj,null);
 }

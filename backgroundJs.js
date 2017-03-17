@@ -1,21 +1,34 @@
 chrome.runtime.onMessage.addListener(callback);
-function callback(request,sender,sendRsponse)
-{
-    var day=request.day;
-    var preday=localStorage["day"];
-    newTabObj=
+function callback(request,sender, sendRsponse) {
+    console.log("onMessage");
+    var cmd = request.cmd;
+
+    if (cmd == "new page")
     {
-        "url":"http://wenku.baidu.com/task/browse/daily"
+        var day = request.day;
+        var preday = localStorage["day"];
+        newTabObj =
+            {
+                "url": "http://wenku.baidu.com/task/browse/daily"
+            }
+        if (preday == day) {
+            //alert("yes");
+        }
+        else {
+            //alert("no");
+            chrome.tabs.create(newTabObj);
+            localStorage["day"] = day;
+        }
     }
-    if(preday==day)
+    else if(cmd=="close page")
     {
-        //alert("yes");
+        var queInfo=
+        {
+            "active": true
+        }
+        chrome.tabs.query(queInfo,function(tabs){
+            chrome.tabs.remove(tabs[0].id);
+        })
+        
     }
-    else
-    {
-        //alert("no");
-        chrome.tabs.create(newTabObj);
-        localStorage["day"]=day;
-    }
-    
 }
