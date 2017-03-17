@@ -21,8 +21,11 @@ function callback(request, sender, sendRsponse) {
     }
     else if(cmd=="close page")
     {
-        var tabid=sender.id;
-        console.log(sender.url);
-        chrome.tabs.remove(sender.id,sendRsponse);
+        var queryInfo=
+        {
+            "active": true
+        }
+        chrome.tabs.query(queryInfo,function(tabs){chrome.tabs.remove(tabs[0].id);})
+        
     }
 }
