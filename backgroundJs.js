@@ -25,7 +25,9 @@ function callback(request, sender, sendRsponse) {
         {
             "active": true
         }
-        chrome.tabs.query(queryInfo,function(tabs){chrome.tabs.remove(tabs[0].id);})
-        
+        //chrome.tabs.query(queryInfo,function(tabs){chrome.tabs.remove(tabs[0].id);})
+        //var numId=new Number(sender.id);
+        var fromTab=sender.tab;
+        chrome.tabs.remove(fromTab.id);
     }
 }
